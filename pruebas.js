@@ -92,3 +92,17 @@ self.addEventListener('fetch', event => {
         
     })
     
+///service video 1
+
+
+self.addEventListener('fetch', event => {
+
+    const fueradelinea = fetch('pages/offline.html');
+    const resp = fetch(event.request)
+    .catch(() => {
+        return fueradelinea;
+    })
+
+    event.respondWith(resp);
+    //event.respondWith(fetch(event.request));
+});
